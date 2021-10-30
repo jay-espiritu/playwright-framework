@@ -1,9 +1,9 @@
-import { Framework } from '../test-setup/index';
- 
-export class BookStorePage {
-	readonly framework: Framework;
+import { Framework } from '../test-setup/index'
 
-	constructor(framework: Framework) {
-		this.framework = framework;
-	}
+export class BookStorePage {
+    readonly framework: Framework
+
+    constructor(framework: Framework) {
+        this.framework = framework
+    }
 }

@@ -1,9 +1,9 @@
-import { Framework } from '../test-setup/index';
- 
-export class FormsPage {
-	readonly framework: Framework;
+import { Framework } from '../test-setup/index'
 
-	constructor(framework: Framework) {
-		this.framework = framework;
-	}
+export class FormsPage {
+    readonly framework: Framework
+
+    constructor(framework: Framework) {
+        this.framework = framework
+    }
 }
