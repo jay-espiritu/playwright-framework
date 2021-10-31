@@ -15,11 +15,11 @@ const config: PlaywrightTestConfig = {
         contextOptions: {
             acceptDownloads: true,
         },
-        headless: false,
+        headless: true,
         viewport: { width: 1920, height: 1080 },
-        video: 'off',
-        trace: 'off',
-        screenshot: 'off',
+        video: 'on-first-retry',
+        trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
     },
     projects: [
         {
@@ -32,7 +32,6 @@ const config: PlaywrightTestConfig = {
         // 	name: 'Firefox',
         // 	use: { browserName: 'firefox' }
         // },
-
         // {
         // 	name: 'WebKit',
         // 	use: { browserName: 'webkit' }
