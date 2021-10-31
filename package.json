@@ -14,7 +14,8 @@
         "report:allure:generate": "npx allure generate ./allure-results --clean",
         "report:allure:serve": "npx allure serve",
         "report:open:allure": "npx allure open ./allure-report",
-        "report:open:html": "npx playwright show-report test-results/result"
+        "report:open:html": "npx playwright show-report test-results/result",
+        "prepare": "husky install"
     },
     "repository": {
         "type": "git",
@@ -34,6 +35,7 @@
         "allure-commandline": "^2.13.8",
         "allure-playwright": "^2.0.0-beta.14",
         "faker": "^5.5.3",
+        "husky": "^7.0.4",
         "playwright": "^1.16.2",
         "prettier": "^2.4.1",
         "typescript": "^4.4.4"
