@@ -7,12 +7,13 @@ on:
 jobs:
   E2E_Tests:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
+    strategy:
+          matrix:
+            node-version: [14.x, 17.x]
 
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
-
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies
