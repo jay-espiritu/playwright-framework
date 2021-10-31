@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
         contextOptions: {
             acceptDownloads: true,
         },
-        headless: false,
+        headless: true,
         viewport: { width: 1920, height: 1080 },
         video: 'on-first-retry',
         trace: 'on-first-retry',
