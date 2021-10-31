@@ -1,8 +1,8 @@
 on:
   push:
+    branches: [ master ]
   pull_request:
-    branches:
-    - master
+    branches: [ master ]
 
 jobs:
   E2E_Tests:
