@@ -1,9 +1,4 @@
 import test from '../../page/basePages'
-import { TextBoxForm } from '../../page/elementPages/textBoxPage'
-
-import faker from 'faker'
-import { expect } from '@playwright/test'
-faker.locale = 'en'
 
 test.describe.parallel('Check Box Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {
@@ -19,10 +14,9 @@ test.describe.parallel('Check Box Test Suite ', () => {
 
     test('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
-
-        await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
+        // await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 
         await checkBoxPage.collapseDropdownList()
-        await checkBoxPage.validateCheckboxScreenshot('collapsed-checkbox')
+        // await checkBoxPage.validateCheckboxScreenshot('collapsed-checkbox')
     })
 })

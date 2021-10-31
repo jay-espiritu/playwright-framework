@@ -4,7 +4,7 @@ import { expect } from '../basePages'
 const expandButton = "[aria-label='Expand all']"
 const collapseButton = "[aria-label='Collapse all']"
 const dropdownListDiv = '.check-box-tree-wrapper'
-const checkBoxPageHeader = ".playgound-header"
+const checkBoxPageHeader = '.playgound-header'
 
 export class CheckBoxPage {
     readonly framework: Framework
@@ -26,7 +26,7 @@ export class CheckBoxPage {
 
     collapseDropdownList = async (): Promise<void> => {
         await this.framework.page.click(collapseButton)
-                await this.framework.page.click(checkBoxPageHeader)
+        await this.framework.page.click(checkBoxPageHeader)
     }
 
     validateCheckboxScreenshot = async (screenshotName: string): Promise<void> => {
