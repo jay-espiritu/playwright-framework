@@ -1,10 +1,10 @@
 ## Installation Overview
 
-#### Package installation
+### Package installation
 
     npm install
 
-#### Playwright installation
+### Playwright installation
 
     npx playwright install
 
