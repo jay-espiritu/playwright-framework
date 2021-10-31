@@ -11,7 +11,6 @@ jobs:
           matrix:
             node-version: [14.x, 17.x]
 
-    name: Playwright tests against ${{ matrix.node }} node version
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
