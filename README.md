@@ -1,10 +1,12 @@
 ## Installation Overview
 
-#### Package installation
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce8d7e3535cf4174b75033073e904c70)](https://app.codacy.com/gh/jay-espiritu/playwright-framework?utm_source=github.com&utm_medium=referral&utm_content=jay-espiritu/playwright-framework&utm_campaign=Badge_Grade_Settings)
+
+### Package installation
 
     npm install
 
-#### Playwright installation
+### Playwright installation
 
     npx playwright install
 
