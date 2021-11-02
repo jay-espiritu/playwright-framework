@@ -14,9 +14,9 @@ test.describe.parallel('Check Box Test Suite ', () => {
 
     test('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
-        // await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
+        await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 
         await checkBoxPage.collapseDropdownList()
-        // await checkBoxPage.validateCheckboxScreenshot('collapsed-checkbox')
+        await checkBoxPage.validateCheckboxScreenshot('collapsed-checkbox')
     })
 })

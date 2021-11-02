@@ -17,8 +17,8 @@ const config: PlaywrightTestConfig = {
         },
         headless: true,
         viewport: { width: 1920, height: 1080 },
-        video: 'on-first-retry',
-        trace: 'on-first-retry',
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
     },
     projects: [
