@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
     timeout: 30000,
     testDir: './src/tests',
     outputDir: './test-results',
-    retries: 1,
+    // retries: 1,
     use: {
         baseURL: 'https://demoqa.com',
         launchOptions: {

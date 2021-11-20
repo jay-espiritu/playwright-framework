@@ -24,15 +24,7 @@
     "containerEnv": {
         "USER": "${env:USER}"
     },
-    "extensions": [
-        "esbenp.prettier-vscode",
-        "coenraads.bracket-pair-colorizer",
-        "eg2.vscode-npm-script",
-        "christian-kohler.npm-intellisense",
-        "christian-kohler.path-intellisense",
-        "foxundermoon.shell-format",
-        "eamodio.gitlens"
-    ],
+    "extensions": ["esbenp.prettier-vscode", "coenraads.bracket-pair-colorizer", "eg2.vscode-npm-script", "christian-kohler.npm-intellisense", "christian-kohler.path-intellisense", "foxundermoon.shell-format", "eamodio.gitlens"],
     "settings": {
         // "go.gopath": "/go",
         // "go.useLanguageServer": true,

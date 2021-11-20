@@ -1,4 +1,4 @@
-import { Framework } from '../test-setup/index'
+import { Framework } from '../test-setup'
 
 export const click = async (framework: Framework, locator: string): Promise<void> => {
     await framework.page.click(locator)

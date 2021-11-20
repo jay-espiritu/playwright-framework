@@ -1,13 +1,12 @@
 echo ""
 echo "Welcome back $USER!"
-echo "Welcome to $PROJECT_DISPLAY_NAME DevContainer!"
 echo "Congratulations! You are all set and ready to go!"
 echo "Happy surfing!"
 echo ""
 
 export CONFIG_PATH=~/config.json
-export PROJECT_NAME=playwright
-export PROJECT_DISPLAY_NAME=playwright
+export PROJECT_NAME=playwright-framework
+export PROJECT_DISPLAY_NAME=playwright-framework
 export PROJECT_ROOT=/workspaces/$PROJECT_NAME
 export PS1="\[\e[32m\]\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\w\[\e[m\]: "
 
