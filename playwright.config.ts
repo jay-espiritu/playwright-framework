@@ -22,16 +22,16 @@ const config: PlaywrightTestConfig = {
         screenshot: 'only-on-failure',
     },
     projects: [
-        {
-            name: 'Chrome Stable',
-            use: {
-                browserName: 'chromium',
-            },
-        },
         // {
-        // 	name: 'Firefox',
-        // 	use: { browserName: 'firefox' }
+        //     name: 'Chrome Stable',
+        //     use: {
+        //         browserName: 'chromium',
+        //     },
         // },
+        {
+            name: 'Firefox',
+            use: { browserName: 'firefox' },
+        },
         // {
         // 	name: 'WebKit',
         // 	use: { browserName: 'webkit' }

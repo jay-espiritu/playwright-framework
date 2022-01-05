@@ -1,4 +1,4 @@
-import { Framework } from '../../test-setup/index'
+import { Framework } from '../../test-setup'
 
 const fullName = '#userName'
 const email = '#userEmail'

@@ -1,4 +1,4 @@
-import { Framework } from '../test-setup/index'
+import { Framework } from '../test-setup'
 
 export const navigateTo = async (framework: Framework, url: string): Promise<void> => {
     await framework.page.goto(url)

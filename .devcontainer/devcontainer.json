@@ -1,0 +1,53 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name": "playwright",
+    "dockerFile": "Dockerfile",
+    "runArgs": [
+        // "--publish", "8000:8000",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined",
+        "-v",
+        "${env:HOME}/.devcontainer/github-pat.txt:/root/.devcontainer/github-pat.txt:ro",
+        "-v",
+        "${env:HOME}${env:USERPROFILE}/.ssh:/root/.ssh:ro",
+        // "-v", "${env:HOME}${env:USERPROFILE}/.aws:/root/.aws",
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        // "--network", "devnet",
+        "--name",
+        "playwright-devcontainer"
+    ],
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+    // Uncomment the next line if you want to publish any ports.
+    // "appPort": [],
+    "containerEnv": {
+        "USER": "${env:USER}"
+    },
+    "extensions": ["esbenp.prettier-vscode", "coenraads.bracket-pair-colorizer", "eg2.vscode-npm-script", "christian-kohler.npm-intellisense", "christian-kohler.path-intellisense", "foxundermoon.shell-format", "eamodio.gitlens"],
+    "settings": {
+        // "go.gopath": "/go",
+        // "go.useLanguageServer": true,
+        // "[go]": {
+        // 	"editor.snippetSuggestions": "none",
+        // 	"editor.formatOnSave": true,
+        // 	"editor.codeActionsOnSave": {
+        // 		"source.organizeImports": true
+        // 	}
+        // },
+        // "go.testFlags": ["-race"],
+        // "go.testTimeout": "60s",
+        // "gopls": {
+        // 	"usePlaceholders": true, // add parameter placeholders when completing a function
+        // 	"completionDocumentation": true // for documentation in completion items
+        // },
+        // "files.eol": "\n", // formatting only supports LF line endings
+        // "remote.extensionKind": {
+        // 	"ms-azuretools.vscode-docker": "workspace"
+        // },
+        // "[typescript]" : {
+        // 	"editor.formatOnSave": true
+        // }
+        //"go.inferGopath": true
+    }
+}

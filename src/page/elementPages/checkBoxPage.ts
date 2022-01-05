@@ -1,4 +1,4 @@
-import { Framework } from '../../test-setup/index'
+import { Framework } from '../../test-setup'
 import { expect } from '../basePages'
 
 const expandButton = "[aria-label='Expand all']"

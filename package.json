@@ -15,7 +15,10 @@
         "report:allure:serve": "npx allure serve",
         "report:open:allure": "npx allure open ./allure-report",
         "report:open:html": "npx playwright show-report test-results/result",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "docker:build": "docker build -t playwright .",
+        "docker:run": "npm run docker:build && docker run --rm -it playwright",
+        "docker:stop": "docker stop $(docker ps -q --filter ancestor=playwright)"
     },
     "repository": {
         "type": "git",
