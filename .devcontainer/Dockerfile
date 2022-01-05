@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.16.3-focal-amd64
+FROM mcr.microsoft.com/playwright:focal-arm64
 
 ENV NODE_VERSION v14.18.1
 
@@ -32,8 +32,8 @@ RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use
 ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
-RUN npm i -D @playwright/test
-RUN npx playwright install chrome
+RUN npm i -D @playwright/test \
+    && npx playwright install firefox
 
 # Clean up
 RUN apt-get autoremove -y \

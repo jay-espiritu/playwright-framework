@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
     timeout: 30000,
     testDir: './src/tests',
     outputDir: './test-results',
-    // retries: 1,
+    retries: 1,
     use: {
         baseURL: 'https://demoqa.com',
         launchOptions: {
@@ -22,16 +22,16 @@ const config: PlaywrightTestConfig = {
         screenshot: 'only-on-failure',
     },
     projects: [
-        {
-            name: 'Chrome Stable',
-            use: {
-                browserName: 'chromium',
-            },
-        },
         // {
-        // 	name: 'Firefox',
-        // 	use: { browserName: 'firefox' }
+        //     name: 'Chrome Stable',
+        //     use: {
+        //         browserName: 'chromium',
+        //     },
         // },
+        {
+            name: 'Firefox',
+            use: { browserName: 'firefox' },
+        },
         // {
         // 	name: 'WebKit',
         // 	use: { browserName: 'webkit' }
