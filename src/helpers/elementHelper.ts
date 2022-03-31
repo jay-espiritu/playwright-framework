@@ -1,19 +1,19 @@
 import { Framework } from '../test-setup'
 
-export const click = async (framework: Framework, locator: string): Promise<void> => {
+export const click = async (framework: Framework, locator: string) => {
     await framework.page.click(locator)
 }
 
-export const doubleClick = async (framework: Framework, locator: string): Promise<void> => {
+export const doubleClick = async (framework: Framework, locator: string) => {
     await framework.page.dblclick(locator)
 }
 
-export const enterText = async (framework: Framework, locator: string, text: string): Promise<void> => {
+export const enterText = async (framework: Framework, locator: string, text: string) => {
     await clearText(framework, locator)
-    await framework.page.type(locator, text)
+    await framework.page.fill(locator, text)
 }
 
-export const clearText = async (framework: Framework, locator: string): Promise<void> => {
+export const clearText = async (framework: Framework, locator: string) => {
     await framework.page.focus(locator)
     await framework.page.keyboard.down('Control')
     await pressKeyboardKey(framework, 'A')
@@ -21,18 +21,18 @@ export const clearText = async (framework: Framework, locator: string): Promise<
     await pressKeyboardKey(framework, 'Backspace')
 }
 
-export const pressKeyboardKey = async (framework: Framework, key: string): Promise<void> => {
+export const pressKeyboardKey = async (framework: Framework, key: string) => {
     await framework.page.keyboard.press(key)
 }
 
-export const waitForSelectorToBeVisible = async (framework: Framework, locator: any, timeout: number = 30000): Promise<void> => {
+export const waitForSelectorToBeVisible = async (framework: Framework, locator: any, timeout: number = 30000) => {
     await framework.page.waitForSelector(locator, {
         state: 'visible',
         timeout: timeout,
     })
 }
 
-export const waitForSelectorToBeHidden = async (framework: Framework, locator: any, timeout: number = 30000): Promise<void> => {
+export const waitForSelectorToBeHidden = async (framework: Framework, locator: any, timeout: number = 30000) => {
     await framework.page.waitForSelector(locator, {
         state: 'hidden',
         timeout: timeout,
