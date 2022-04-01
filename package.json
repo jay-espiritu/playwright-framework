@@ -8,6 +8,7 @@
         "npm": ">=6.0.0"
     },
     "scripts": {
+        "build": "rm dist && tsc",
         "test": "npx playwright test",
         "prettier": "./node_modules/.bin/prettier --write \"**/*.{json,js,ts}\" --list-different --config .prettierrc",
         "playwright:codegen": "npx playwright codegen",

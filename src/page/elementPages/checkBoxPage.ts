@@ -32,6 +32,6 @@ export class CheckBoxPage {
     validateCheckboxScreenshot = async (screenshotName: string): Promise<void> => {
         const element = await this.framework.page.$(dropdownListDiv)
         const elementImage = await element?.screenshot()
-        expect(elementImage).toMatchSnapshot(`${screenshotName}.png`)
+        expect.soft(elementImage).toMatchSnapshot(`${screenshotName}.png`)
     }
 }

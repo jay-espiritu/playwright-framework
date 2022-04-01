@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:focal-arm64
+FROM mcr.microsoft.com/playwright:v1.20.1-focal-arm64
 
 ENV NODE_VERSION v14.18.1
 
@@ -38,4 +38,4 @@ RUN npm i -D @playwright/test \
 # Clean up
 RUN apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*q

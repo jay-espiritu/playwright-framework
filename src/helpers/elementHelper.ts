@@ -1,16 +1,29 @@
 import { Framework } from '../test-setup'
 
+export const findLocator = (framework: Framework, locator: string) => {
+    return framework.page.locator(locator)
+}
+
+export const findElementHandle = async (framework: Framework, locator: string) => {
+    return await framework.page.$(locator)
+}
+
+export const findElementHandleList = async (framework: Framework, locator: string) => {
+    return await framework.page.$$(locator)
+}
+
 export const click = async (framework: Framework, locator: string) => {
-    await framework.page.click(locator)
+    await findLocator(framework, locator).click()
 }
 
 export const doubleClick = async (framework: Framework, locator: string) => {
-    await framework.page.dblclick(locator)
+    const test = findLocator(framework, locator)
+    await findLocator(framework, locator).dblclick()
 }
 
 export const enterText = async (framework: Framework, locator: string, text: string) => {
     await clearText(framework, locator)
-    await framework.page.fill(locator, text)
+    await findLocator(framework, locator).fill(text)
 }
 
 export const clearText = async (framework: Framework, locator: string) => {
@@ -40,7 +53,7 @@ export const waitForSelectorToBeHidden = async (framework: Framework, locator: a
 }
 
 export const getElementProperty = async (framework: Framework, locator: any, property: string): Promise<any> => {
-    const elementHandle = await framework.page.$(locator)
+    const elementHandle = await findElementHandle(framework, locator)
 
     if (elementHandle == null) throw new Error(`No element found with using '${locator}'`)
 
