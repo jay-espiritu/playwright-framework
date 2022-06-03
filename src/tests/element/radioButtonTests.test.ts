@@ -1,5 +1,5 @@
-import test from '../../pages/basePages'
-import { RadioButton } from '../../pages/elementPages/radioButtonPage'
+import test from '../../main/pages/basePages'
+import { RadioButton } from '../../main/pages/elementPages/radioButtonPage'
 
 test.describe('Radio Button Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {

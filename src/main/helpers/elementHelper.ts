@@ -1,4 +1,6 @@
+import { logging } from '../../utils/loggers'
 import { Framework } from '../test-setup'
+const logger = logging.getLogger('HttpHelper')
 
 export const findLocator = (framework: Framework, locator: string) => {
     return framework.page.locator(locator)

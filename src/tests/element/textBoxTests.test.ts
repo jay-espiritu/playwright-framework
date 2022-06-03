@@ -1,5 +1,5 @@
-import test from '../../pages/basePages'
-import { TextBoxForm } from '../../pages/elementPages/textBoxPage'
+import test from '../../main/pages/basePages'
+import { TextBoxForm } from '../../main/pages/elementPages/textBoxPage'
 import { faker } from '@faker-js/faker'
 
 test.describe('Text Box Test Suite ', () => {

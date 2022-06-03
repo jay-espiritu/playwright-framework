@@ -1,4 +1,5 @@
-import test from '../../pages/basePages'
+import test from '../../main/pages/basePages'
+import { DefLogger, logging } from '../../utils/loggers'
 
 test.describe('Check Box Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {
@@ -12,7 +13,7 @@ test.describe('Check Box Test Suite ', () => {
         await checkBoxPage.selectCheckboxOption(options)
     })
 
-    test.only('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
+    test('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
         await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 
