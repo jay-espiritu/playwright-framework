@@ -7,7 +7,7 @@ test.describe('Text Box Test Suite ', () => {
         await textBoxPage.framework.page.goto('/text-box')
     })
 
-    test('Complete text box form successfully', async ({ textBoxPage }) => {
+    test('TC_TextBox_001: Complete text box form successfully', async ({ textBoxPage }) => {
         const formDetails: TextBoxForm = {
             fullName: faker.name.findName(),
             email: faker.internet.exampleEmail(),

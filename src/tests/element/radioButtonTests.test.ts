@@ -6,12 +6,12 @@ test.describe('Radio Button Test Suite ', () => {
         await checkBoxPage.framework.page.goto('/radio-button')
     })
 
-    test('Select radio button as yes', async ({ radioButtonPage }) => {
+    test('TC_RadioButton_001: Select radio button as yes', async ({ radioButtonPage }) => {
         await radioButtonPage.selectRadioButton(RadioButton.Yes)
         await radioButtonPage.validateRadioButtonResult('Yes')
     })
 
-    test('Select radio button as impressive', async ({ radioButtonPage }) => {
+    test('TC_RadioButton_002: Select radio button as impressive', async ({ radioButtonPage }) => {
         await radioButtonPage.selectRadioButton(RadioButton.Impressive)
         await radioButtonPage.validateRadioButtonResult('Impressive')
     })

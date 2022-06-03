@@ -1,4 +1,4 @@
-import log4js, { Level, Logger } from 'log4js'
+import log4js from 'log4js'
 
 export const logging = log4js
 
