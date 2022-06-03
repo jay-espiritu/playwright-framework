@@ -1,0 +1,28 @@
+import { expect } from '@playwright/test'
+import { ElementHelper } from '../../helpers'
+import { Framework } from '../../test-setup'
+
+const resultMessage = '.text-success'
+
+export class RadioButtonPage {
+    readonly framework: Framework
+
+    constructor(framework: Framework) {
+        this.framework = framework
+    }
+
+    selectRadioButton = async (radioButton: RadioButton): Promise<void> => {
+        await this.framework.page.check(`text=${radioButton}`)
+    }
+
+    validateRadioButtonResult = async (result: string): Promise<void> => {
+        const actual = ElementHelper.findLocator(this.framework, resultMessage)
+        expect(await actual.innerText()).toBe(result)
+    }
+}
+
+export enum RadioButton {
+    Yes = 'yes',
+    No = 'no',
+    Impressive = 'impressive',
+}
