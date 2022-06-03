@@ -11,7 +11,7 @@ logging.configure({
             extension: '.log',
             layout: {
                 type: 'pattern',
-                pattern: '%d %p %c %f{1}:%l %m%n',
+                pattern: '%d{hh:mm:ss} [%p] %c %f{1}:%l %m%n',
             },
         },
     },
