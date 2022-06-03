@@ -1,7 +1,6 @@
 import log4js, { Level, Logger } from 'log4js'
 
 export const logging = log4js
-export type DefLogger = Logger
 
 logging.configure({
     appenders: {

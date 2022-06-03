@@ -1,8 +1,7 @@
 import test from '../../main/pages/basePages'
-import { DefLogger, logging } from '../../utils/loggers'
 
 test.describe('Check Box Test Suite ', () => {
-    test.beforeEach(async ({ checkBoxPage }) => {
+    test.beforeEach(async ({ checkBoxPage, radioButtonPage, textBoxPage }) => {
         await checkBoxPage.framework.page.goto('/checkbox')
     })
 
