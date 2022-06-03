@@ -4,7 +4,6 @@
         {
             "name": "Playwright Current File",
             "request": "launch",
-            // "runtimeVersion": "12.21.0",
             "runtimeArgs": ["run", "test", "--retries=0", "${fileBasename}"],
             "runtimeExecutable": "npm",
             "skipFiles": ["<node_internals>/**"],

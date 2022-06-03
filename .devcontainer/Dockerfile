@@ -33,7 +33,7 @@ ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
 RUN npm i -D @playwright/test \
-    && npx playwright install firefox
+    && npx playwright install firefox chrome
 
 # Clean up
 RUN apt-get autoremove -y \

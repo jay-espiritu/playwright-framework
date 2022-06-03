@@ -1,10 +1,8 @@
-import test from '../../page/basePages'
-import { TextBoxForm } from '../../page/elementPages/textBoxPage'
+import test from '../../pages/basePages'
+import { TextBoxForm } from '../../pages/elementPages/textBoxPage'
+import { faker } from '@faker-js/faker'
 
-import faker from 'faker'
-faker.locale = 'en'
-
-test.describe.parallel('Text Box Test Suite ', () => {
+test.describe('Text Box Test Suite ', () => {
     test.beforeEach(async ({ textBoxPage }) => {
         await textBoxPage.framework.page.goto('/text-box')
     })

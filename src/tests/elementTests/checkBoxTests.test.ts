@@ -1,6 +1,6 @@
-import test from '../../page/basePages'
+import test from '../../pages/basePages'
 
-test.describe.parallel('Check Box Test Suite ', () => {
+test.describe('Check Box Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {
         await checkBoxPage.framework.page.goto('/checkbox')
     })
@@ -12,7 +12,7 @@ test.describe.parallel('Check Box Test Suite ', () => {
         await checkBoxPage.selectCheckboxOption(options)
     })
 
-    test('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
+    test.only('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
         await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 

@@ -4,20 +4,11 @@ export const findLocator = (framework: Framework, locator: string) => {
     return framework.page.locator(locator)
 }
 
-export const findElementHandle = async (framework: Framework, locator: string) => {
-    return await framework.page.$(locator)
-}
-
-export const findElementHandleList = async (framework: Framework, locator: string) => {
-    return await framework.page.$$(locator)
-}
-
 export const click = async (framework: Framework, locator: string) => {
     await findLocator(framework, locator).click()
 }
 
 export const doubleClick = async (framework: Framework, locator: string) => {
-    const test = findLocator(framework, locator)
     await findLocator(framework, locator).dblclick()
 }
 
@@ -50,13 +41,4 @@ export const waitForSelectorToBeHidden = async (framework: Framework, locator: a
         state: 'hidden',
         timeout: timeout,
     })
-}
-
-export const getElementProperty = async (framework: Framework, locator: any, property: string): Promise<any> => {
-    const elementHandle = await findElementHandle(framework, locator)
-
-    if (elementHandle == null) throw new Error(`No element found with using '${locator}'`)
-
-    const propertyHandle = await elementHandle.getProperty(property)
-    return propertyHandle.jsonValue()
 }

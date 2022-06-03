@@ -1,5 +1,5 @@
 import { test as baseTest } from '@playwright/test'
-import { TextBoxPage, CheckBoxPage } from '.'
+import { TextBoxPage, CheckBoxPage, RadioButtonPage } from '.'
 import { Framework, Setup } from '../test-setup'
 
 let framework: Framework
@@ -7,6 +7,7 @@ let framework: Framework
 const test = baseTest.extend<{
     textBoxPage: TextBoxPage
     checkBoxPage: CheckBoxPage
+    radioButtonPage: RadioButtonPage
 }>({
     textBoxPage: async ({ browser, context, page }, use): Promise<Framework> => {
         framework = await Setup.beforeEachDefault(browser, context, page)
@@ -16,6 +17,11 @@ const test = baseTest.extend<{
     checkBoxPage: async ({ browser, context, page }, use): Promise<Framework> => {
         framework = await Setup.beforeEachDefault(browser, context, page)
         await use(new CheckBoxPage(framework))
+        return framework
+    },
+    radioButtonPage: async ({ browser, context, page }, use): Promise<Framework> => {
+        framework = await Setup.beforeEachDefault(browser, context, page)
+        await use(new RadioButtonPage(framework))
         return framework
     },
 })
