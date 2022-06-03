@@ -12,7 +12,7 @@ test.describe('Check Box Test Suite ', () => {
         await checkBoxPage.selectCheckboxOption(options)
     })
 
-    test.only('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
+    test('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
         await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 
