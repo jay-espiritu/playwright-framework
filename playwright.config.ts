@@ -1,7 +1,9 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 
 const config: PlaywrightTestConfig = {
-    reporter: [['allure-playwright'], ['allure-playwright'], ['list'], ['junit', { outputFile: 'test-results/results.xml' }], ['json', { outputFile: 'test-results/results.json' }], ['html', { outputFolder: 'test-results/result', open: false }]],
+    reporter: process.env.CI
+        ? [['allure-playwright'], ['allure-playwright'], ['list'], ['junit', { outputFile: 'test-results/results.xml' }], ['json', { outputFile: 'test-results/results.json' }], ['html', { outputFolder: 'test-results/result', open: false }]]
+        : [['list']],
     forbidOnly: !!process.env.CI,
     timeout: 30000,
     testDir: './src/tests',

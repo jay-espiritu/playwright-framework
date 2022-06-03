@@ -1,18 +1,18 @@
-import test from '../../pages/basePages'
+import test from '../../main/pages/basePages'
 
 test.describe('Check Box Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {
         await checkBoxPage.framework.page.goto('/checkbox')
     })
 
-    test('Select multiple dropdown options', async ({ checkBoxPage }) => {
+    test.only('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
         const options = ['Notes', 'React', 'Private']
 
         await checkBoxPage.expandDropdownList()
         await checkBoxPage.selectCheckboxOption(options)
     })
 
-    test.only('Expand and collapse dropdown options', async ({ checkBoxPage }) => {
+    test('TC_Checkbox_002: Expand and collapse dropdown options', async ({ checkBoxPage }) => {
         await checkBoxPage.expandDropdownList()
         await checkBoxPage.validateCheckboxScreenshot('expanded-checkbox')
 

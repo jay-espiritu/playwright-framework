@@ -2,4 +2,5 @@ allure-results
 dist
 node_modules
 target
+test-logs
 test-results

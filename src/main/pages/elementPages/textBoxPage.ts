@@ -19,14 +19,17 @@ export class TextBoxPage {
         await this.framework.page.fill(email, formDetails.email)
         await this.framework.page.fill(currentAddress, formDetails.currentAddress)
         await this.framework.page.fill(permanentAddress, formDetails.permanentAddress)
+        this.framework.logger.debug(`Filled in text box form with following details: ${JSON.stringify(formDetails)}`)
     }
 
     clickTextButtonSubmit = async (): Promise<void> => {
         await this.framework.page.click(submitButton)
+        this.framework.logger.debug('Clicked submit button')
     }
 
     validateTextFormWindowExist = async (): Promise<void> => {
         await this.framework.page.isVisible(textFormResultWindow)
+        this.framework.logger.info('Validated text form window exists')
     }
 }
 

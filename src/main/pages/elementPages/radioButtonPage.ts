@@ -13,11 +13,13 @@ export class RadioButtonPage {
 
     selectRadioButton = async (radioButton: RadioButton): Promise<void> => {
         await this.framework.page.check(`text=${radioButton}`)
+        this.framework.logger.debug(`Selected radio button option '${radioButton}'`)
     }
 
     validateRadioButtonResult = async (result: string): Promise<void> => {
         const actual = ElementHelper.findLocator(this.framework, resultMessage)
         expect(await actual.innerText()).toBe(result)
+        this.framework.logger.info('Successfully validated radio button results')
     }
 }
 
