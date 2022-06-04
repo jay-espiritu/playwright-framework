@@ -31,12 +31,19 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Upload artifacts
+      - name: Upload test artifacts
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
           name: test-artifacts
           path: test-results/*
+
+      - name: Upload test logs
+        uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: test-logs
+          path: test-logs/*
 
       - name: Test Report
         uses: dorny/test-reporter@v1

@@ -1,10 +1,11 @@
 import test from '../../main/pages/basePages'
 import { TextBoxForm } from '../../main/pages/elementPages/textBoxPage'
 import { faker } from '@faker-js/faker'
+import { PageHelper } from '../../main/helpers'
 
 test.describe('Text Box Test Suite ', () => {
     test.beforeEach(async ({ textBoxPage }) => {
-        await textBoxPage.framework.page.goto('/text-box')
+        await PageHelper.navigateTo(textBoxPage.framework, '/text-box')
     })
 
     test('TC_TextBox_001: Complete text box form successfully', async ({ textBoxPage }) => {

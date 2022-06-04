@@ -1,9 +1,9 @@
 import { test as baseTest, TestInfo } from '@playwright/test'
 import { Logger } from 'log4js'
 import { TextBoxPage, CheckBoxPage, RadioButtonPage } from '.'
-import { Format } from '../../utils'
 import { logging } from '../../utils/loggers'
 import { Framework, Setup } from '../test-setup'
+import { Format } from '../utils'
 
 let framework: Framework
 let logger: Logger

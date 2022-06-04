@@ -11,11 +11,15 @@ logging.configure({
             extension: '.log',
             layout: {
                 type: 'pattern',
-                pattern: '%d{hh:mm:ss} [%p] %c %f{1}:%l %m%n',
+                pattern: '%d{hh:mm:ss} [%p] %c %f{1}:%l | %m%n',
             },
         },
     },
     categories: {
-        default: { appenders: ['multiFile'], level: 'debug', enableCallStack: true },
+        /**
+         * Change 'level' to desired level to be included in log files
+         * ALL, MARK, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+         */
+        default: { appenders: ['multiFile'], level: 'all', enableCallStack: true },
     },
 })

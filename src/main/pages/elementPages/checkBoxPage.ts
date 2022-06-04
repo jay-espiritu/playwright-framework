@@ -1,4 +1,6 @@
+import { ElementHelper } from '../../helpers'
 import { Framework } from '../../test-setup'
+import { Screenshot } from '../../utils'
 import { expect } from '../basePages'
 
 const expandButton = "[aria-label='Expand all']"
@@ -15,26 +17,26 @@ export class CheckBoxPage {
 
     selectCheckboxOption = async (optionNames: string[]): Promise<void> => {
         for (let index = 0; index < optionNames.length; index++) {
-            await this.framework.page.click(`text=${optionNames[index]}`)
+            await ElementHelper.click(this.framework, `text=${optionNames[index]}`)
         }
         this.framework.logger.debug(`Selected the following checkbox options: ${optionNames}`)
     }
 
     expandDropdownList = async (): Promise<void> => {
-        await this.framework.page.click(expandButton)
-        await this.framework.page.click(checkBoxPageHeader)
+        await ElementHelper.click(this.framework, expandButton)
+        await ElementHelper.click(this.framework, checkBoxPageHeader)
         this.framework.logger.debug('Expanded dropdown list')
     }
 
     collapseDropdownList = async (): Promise<void> => {
-        await this.framework.page.click(collapseButton)
-        await this.framework.page.click(checkBoxPageHeader)
+        await ElementHelper.click(this.framework, collapseButton)
+        await ElementHelper.click(this.framework, checkBoxPageHeader)
+        this.framework.logger.debug('Collapsed dropdown list')
     }
 
     validateCheckboxScreenshot = async (screenshotName: string): Promise<void> => {
-        const element = await this.framework.page.$(dropdownListDiv)
-        const elementImage = await element?.screenshot()
-        expect.soft(elementImage).toMatchSnapshot(`${screenshotName}.png`)
-        this.framework.logger.info('Successfully validated checkbox screeshot')
+        const image = await Screenshot.captureElement(this.framework, dropdownListDiv)
+        await Screenshot.validateComparison(image, screenshotName)
+        this.framework.logger.info('Successfully validated checkbox screenshot')
     }
 }

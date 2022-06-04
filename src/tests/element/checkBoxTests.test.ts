@@ -1,8 +1,9 @@
+import { PageHelper } from '../../main/helpers'
 import test from '../../main/pages/basePages'
 
 test.describe('Check Box Test Suite ', () => {
     test.beforeEach(async ({ checkBoxPage }) => {
-        await checkBoxPage.framework.page.goto('/checkbox')
+        await PageHelper.navigateTo(checkBoxPage.framework, '/checkbox')
     })
 
     test('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {

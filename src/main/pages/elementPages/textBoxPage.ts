@@ -1,3 +1,4 @@
+import { ElementHelper } from '../../helpers'
 import { Framework } from '../../test-setup'
 
 const fullName = '#userName'
@@ -15,20 +16,21 @@ export class TextBoxPage {
     }
 
     fillTextBoxForm = async (formDetails: TextBoxForm): Promise<void> => {
-        await this.framework.page.fill(fullName, formDetails.fullName)
-        await this.framework.page.fill(email, formDetails.email)
-        await this.framework.page.fill(currentAddress, formDetails.currentAddress)
-        await this.framework.page.fill(permanentAddress, formDetails.permanentAddress)
-        this.framework.logger.debug(`Filled in text box form with following details: ${JSON.stringify(formDetails)}`)
+        await ElementHelper.enterText(this.framework, fullName, formDetails.fullName)
+        await ElementHelper.enterText(this.framework, email, formDetails.email)
+        await ElementHelper.enterText(this.framework, currentAddress, formDetails.currentAddress)
+        await ElementHelper.enterText(this.framework, permanentAddress, formDetails.permanentAddress)
+        this.framework.logger.info(`Filled in text box form with following details: ${JSON.stringify(formDetails)}`)
     }
 
     clickTextButtonSubmit = async (): Promise<void> => {
-        await this.framework.page.click(submitButton)
+        await ElementHelper.click(this.framework, submitButton)
         this.framework.logger.debug('Clicked submit button')
     }
 
     validateTextFormWindowExist = async (): Promise<void> => {
-        await this.framework.page.isVisible(textFormResultWindow)
+        const locator = ElementHelper.findLocator(this.framework, textFormResultWindow)
+        await locator.isVisible()
         this.framework.logger.info('Validated text form window exists')
     }
 }
