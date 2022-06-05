@@ -1,3 +1,3 @@
-export { TextBoxPage } from './elementPages/textBoxPage';
-export { CheckBoxPage } from './elementPages/checkBoxPage';
-export { RadioButtonPage } from './elementPages/radioButtonPage';
+export { TextBoxPage } from 'src/main/pages/elementPages/textBoxPage';
+export { CheckBoxPage } from 'src/main/pages/elementPages/checkBoxPage';
+export { RadioButtonPage } from 'src/main/pages/elementPages/radioButtonPage';

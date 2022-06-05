@@ -1,4 +1,4 @@
-import { Browser, BrowserContext, Page, TestInfo } from '@playwright/test';
+import { Browser, BrowserContext, Page } from '@playwright/test';
 import { Logger } from 'log4js';
 
 export class Framework {

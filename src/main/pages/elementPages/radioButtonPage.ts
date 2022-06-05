@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
-import { ElementHelper } from '../../helpers';
-import { Framework } from '../../test-setup';
+import { ElementHelper } from 'src/main/helpers';
+import { Framework } from 'src/main/test-setup';
 
 const resultMessage = '.text-success';
 

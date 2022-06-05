@@ -1,5 +1,5 @@
 import { TestInfo } from '@playwright/test';
-import { Framework } from '.';
+import { Framework } from 'src/main/test-setup';
 var fs = require('fs');
 
 export const afterEachDefault = async (framework: Framework, info: TestInfo): Promise<void> => {

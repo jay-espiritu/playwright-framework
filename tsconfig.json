@@ -15,7 +15,8 @@
 		"declaration": true,
 		"sourceMap": true,
 		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"baseUrl": "."
 	},
 	"compileOnSave": true,
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],

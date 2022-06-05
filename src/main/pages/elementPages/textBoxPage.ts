@@ -1,5 +1,5 @@
-import { ElementHelper } from '../../helpers';
-import { Framework } from '../../test-setup';
+import { ElementHelper } from 'src/main/helpers';
+import { Framework } from 'src/main/test-setup';
 
 const fullName = '#userName';
 const email = '#userEmail';
