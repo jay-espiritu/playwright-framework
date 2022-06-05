@@ -1,13 +1,13 @@
-import { Framework } from '../test-setup'
+import { Framework } from '@main/test-setup';
 
 export const navigateTo = async (framework: Framework, url: string) => {
-    await framework.page.goto(url)
-}
+	await framework.page.goto(url);
+};
 
 export const getCurrentUrl = async (framework: Framework): Promise<string> => {
-    return framework.page.url()
-}
+	return framework.page.url();
+};
 
 export const refreshPage = async (framework: Framework) => {
-    await framework.page.reload()
-}
+	await framework.page.reload();
+};

@@ -1,16 +1,16 @@
-import { ElementHelper } from '../helpers'
-import { expect } from '../pages/basePages'
-import { Framework } from '../test-setup'
+import { expect } from '@main/pages/basePages';
+import { ElementHelper } from '@main/helpers';
+import { Framework } from '@main/test-setup';
 
 export const capturePage = async (framework: Framework): Promise<Buffer> => {
-    return await framework.page.screenshot()
-}
+	return await framework.page.screenshot();
+};
 
 export const captureElement = async (framework: Framework, locator: string): Promise<Buffer> => {
-    const element = ElementHelper.findLocator(framework, locator)
-    return await element?.screenshot()
-}
+	const element = ElementHelper.findLocator(framework, locator);
+	return await element?.screenshot();
+};
 
 export const validateComparison = async (actualImage: Buffer, name: string): Promise<void> => {
-    expect.soft(actualImage).toMatchSnapshot([`${name}.png`])
-}
+	expect.soft(actualImage).toMatchSnapshot([`${name}.png`]);
+};

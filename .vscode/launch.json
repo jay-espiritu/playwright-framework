@@ -1,13 +1,13 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Playwright Current File",
-            "request": "launch",
-            "runtimeArgs": ["run", "test", "--retries=0", "${fileBasename}"],
-            "runtimeExecutable": "npm",
-            "skipFiles": ["<node_internals>/**"],
-            "type": "pwa-node"
-        }
-    ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Playwright Current File",
+			"request": "launch",
+			"runtimeArgs": ["run", "test", "--retries=0", "${fileBasename}"],
+			"runtimeExecutable": "npm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "pwa-node"
+		}
+	]
 }
