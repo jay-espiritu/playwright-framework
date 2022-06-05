@@ -1,20 +1,23 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noImplicitAny": false,
-        "outDir": "dist",
-        "resolveJsonModule": true,
-        "rootDir": "src",
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "target": "es2019"
-    },
-    "compileOnSave": true,
-    "include": ["src"]
+	"compilerOptions": {
+		"target": "ES2019",
+		"module": "commonjs",
+		"lib": ["esnext", "dom", "DOM.Iterable"],
+		"esModuleInterop": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"allowJs": true,
+		"jsx": "react",
+		"resolveJsonModule": true,
+		"outDir": "dist",
+		"rootDir": "src",
+		"declaration": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node"
+	},
+	"compileOnSave": true,
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
+	"exclude": ["node_modules", "dist"]
 }
