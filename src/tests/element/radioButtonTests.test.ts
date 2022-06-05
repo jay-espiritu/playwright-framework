@@ -1,9 +1,10 @@
+import { PageHelper } from '../../main/helpers'
 import test from '../../main/pages/basePages'
 import { RadioButton } from '../../main/pages/elementPages/radioButtonPage'
 
 test.describe('Radio Button Test Suite ', () => {
-    test.beforeEach(async ({ checkBoxPage }) => {
-        await checkBoxPage.framework.page.goto('/radio-button')
+    test.beforeEach(async ({ radioButtonPage }) => {
+        await PageHelper.navigateTo(radioButtonPage.framework, '/radio-button')
     })
 
     test('TC_RadioButton_001: Select radio button as yes', async ({ radioButtonPage }) => {

@@ -12,7 +12,7 @@ export class RadioButtonPage {
     }
 
     selectRadioButton = async (radioButton: RadioButton): Promise<void> => {
-        await this.framework.page.check(`text=${radioButton}`)
+        await ElementHelper.check(this.framework, `text=${radioButton}`)
         this.framework.logger.debug(`Selected radio button option '${radioButton}'`)
     }
 
