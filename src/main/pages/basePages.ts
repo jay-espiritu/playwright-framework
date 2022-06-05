@@ -1,9 +1,9 @@
 import { test as baseTest } from '@playwright/test';
 import { Logger } from 'log4js';
-import { logging } from 'src/utils';
-import { Framework, Setup } from 'src/main/test-setup';
-import { Format } from 'src/main/utils';
-import { CheckBoxPage, RadioButtonPage, TextBoxPage } from 'src/main/pages/index';
+import { Framework, Setup } from '@main/test-setup';
+import { CheckBoxPage, RadioButtonPage, TextBoxPage } from '@main/pages/index';
+import { logging } from '@utils/loggers';
+import { Format } from '@main/utils';
 
 let framework: Framework;
 let logger: Logger;

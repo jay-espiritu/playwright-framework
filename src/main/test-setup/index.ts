@@ -1,3 +1,3 @@
-export { Framework } from './setup';
-export * as Setup from './setup';
-export * as TearDown from './tearDown';
+export { Framework } from '@main/test-setup/setup';
+export * as Setup from '@main/test-setup/setup';
+export * as TearDown from '@main/test-setup/tearDown';

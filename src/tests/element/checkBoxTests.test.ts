@@ -1,5 +1,5 @@
-import { PageHelper } from '../../main/helpers';
-import test from '../../main/pages/basePages';
+import { PageHelper } from '@main/helpers';
+import test from '@main/pages/basePages';
 
 test.describe('Check Box Test Suite ', () => {
 	test.beforeEach(async ({ checkBoxPage }) => {

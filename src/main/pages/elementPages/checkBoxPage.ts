@@ -1,6 +1,6 @@
-import { ElementHelper } from 'src/main/helpers';
-import { Framework } from 'src/main/test-setup';
-import { Screenshot } from 'src/main/utils';
+import { ElementHelper } from '@main/helpers';
+import { Framework } from '@main/test-setup';
+import { Screenshot } from '@main/utils';
 
 const expandButton = "[aria-label='Expand all']";
 const collapseButton = "[aria-label='Collapse all']";

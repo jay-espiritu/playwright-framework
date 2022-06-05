@@ -1,7 +1,7 @@
-import test from '../../main/pages/basePages';
-import { TextBoxForm } from '../../main/pages/elementPages/textBoxPage';
+import test from '@main/pages/basePages';
+import { PageHelper } from '@main/helpers';
+import { TextBoxForm } from '@main/pages';
 import { faker } from '@faker-js/faker';
-import { PageHelper } from '../../main/helpers';
 
 test.describe('Text Box Test Suite ', () => {
 	test.beforeEach(async ({ textBoxPage }) => {

@@ -16,7 +16,11 @@
 		"sourceMap": true,
 		"forceConsistentCasingInFileNames": true,
 		"moduleResolution": "node",
-		"baseUrl": "."
+		"baseUrl": ".",
+		"paths": {
+			"@main/*": ["src/main/*"],
+			"@utils/*": ["src/utils/*"]
+		}
 	},
 	"compileOnSave": true,
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],

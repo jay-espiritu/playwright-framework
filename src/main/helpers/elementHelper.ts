@@ -1,4 +1,4 @@
-import { Framework } from 'src/main/test-setup';
+import { Framework } from '@main/test-setup';
 
 export const findLocator = (framework: Framework, locator: string) => {
 	return framework.page.locator(locator);

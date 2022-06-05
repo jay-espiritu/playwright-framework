@@ -1,6 +1,6 @@
-import { PageHelper } from '../../main/helpers';
-import test from '../../main/pages/basePages';
-import { RadioButton } from '../../main/pages/elementPages/radioButtonPage';
+import test from '@main/pages/basePages';
+import { PageHelper } from '@main/helpers';
+import { RadioButton } from '@main/pages';
 
 test.describe('Radio Button Test Suite ', () => {
 	test.beforeEach(async ({ radioButtonPage }) => {

@@ -1,6 +1,6 @@
-import { expect } from 'src/main/pages/basePages';
-import { ElementHelper } from 'src/main/helpers';
-import { Framework } from 'src/main/test-setup';
+import { expect } from '@main/pages/basePages';
+import { ElementHelper } from '@main/helpers';
+import { Framework } from '@main/test-setup';
 
 export const capturePage = async (framework: Framework): Promise<Buffer> => {
 	return await framework.page.screenshot();
