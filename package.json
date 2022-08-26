@@ -39,18 +39,18 @@
 	},
 	"homepage": "https://github.com/jay-espiritu/playwright-framework#readme",
 	"devDependencies": {
-		"@faker-js/faker": "^7.1.0",
-		"@playwright/test": "^1.22.2",
-		"@typescript-eslint/eslint-plugin": "^5.9.0",
-		"@typescript-eslint/parser": "^5.9.0",
-		"allure-commandline": "^2.17.2",
-		"allure-playwright": "2.0.0-beta.16",
-		"eslint-plugin-playwright": "^0.7.1",
-		"eslint": "^8.12.0",
+		"@faker-js/faker": "^7.4.0",
+		"@playwright/test": "^1.25.1",
+		"@typescript-eslint/eslint-plugin": "^5.35.1",
+		"@typescript-eslint/parser": "^5.35.1",
+		"allure-commandline": "^2.18.1",
+		"allure-playwright": "2.0.0-beta.19",
+		"eslint-plugin-playwright": "^0.11.1",
+		"eslint": "^8.22.0",
 		"husky": "^8.0.1",
-		"log4js": "^6.5.2",
-		"playwright": "^1.22.2",
-		"prettier": "^2.6.2",
-		"typescript": "^4.7.2"
+		"log4js": "^6.6.1",
+		"playwright": "^1.25.1",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.2"
 	}
 }

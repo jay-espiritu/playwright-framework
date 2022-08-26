@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.20.1-focal-arm64
+FROM mcr.microsoft.com/playwright:v1.25.1-focal-arm64
 
 ENV NODE_VERSION v14.18.1
 
@@ -7,11 +7,11 @@ ARG USERNAME=vscode
 ARG USER_UID=2000
 ARG USER_GID=$USER_UID
 RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+  && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 # Get update
 RUN apt update \
-    && apt-get update
+  && apt-get update
 
 # This is to alleviate Node permission issue when running the 'preinstall'
 RUN npm set unsafe-perm true
@@ -33,9 +33,9 @@ ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
 RUN npm i -D @playwright/test \
-    && npx playwright install firefox chrome
+  && npx playwright install firefox chrome
 
 # Clean up
 RUN apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*q
+  && apt-get clean -y \
+  && rm -rf /var/lib/apt/lists/*q
