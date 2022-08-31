@@ -18,24 +18,23 @@ export class CheckBoxPage {
 		for (let index = 0; index < optionNames.length; index++) {
 			await ElementHelper.click(this.framework, `text=${optionNames[index]}`);
 		}
-		this.framework.logger.debug(`Selected the following checkbox options: ${optionNames}`);
+		this.framework.logger.info(`Selected the following checkbox options: ${optionNames}`);
 	};
 
 	expandDropdownList = async (): Promise<void> => {
 		await ElementHelper.click(this.framework, expandButton);
 		await ElementHelper.click(this.framework, checkBoxPageHeader);
-		this.framework.logger.debug('Expanded dropdown list');
+		this.framework.logger.info('Expanded dropdown list');
 	};
 
 	collapseDropdownList = async (): Promise<void> => {
 		await ElementHelper.click(this.framework, collapseButton);
 		await ElementHelper.click(this.framework, checkBoxPageHeader);
-		this.framework.logger.debug('Collapsed dropdown list');
+		this.framework.logger.info('Collapsed dropdown list');
 	};
 
 	validateCheckboxScreenshot = async (screenshotName: string): Promise<void> => {
-		const image = await Screenshot.captureElement(this.framework, dropdownListDiv);
-		await Screenshot.validateComparison(image, screenshotName);
+		await Screenshot.validateElementScreenshot(this.framework, dropdownListDiv, screenshotName);
 		this.framework.logger.info('Successfully validated checkbox screenshot');
 	};
 }

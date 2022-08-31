@@ -1,6 +1,6 @@
-import { expect } from '@playwright/test';
 import { ElementHelper } from '@main/helpers';
 import { Framework } from '@main/test-setup';
+import { expect } from '@main/pages/basePages';
 
 const resultMessage = '.text-success';
 
@@ -13,7 +13,7 @@ export class RadioButtonPage {
 
 	selectRadioButton = async (radioButton: RadioButton): Promise<void> => {
 		await ElementHelper.check(this.framework, `text=${radioButton}`);
-		this.framework.logger.debug(`Selected radio button option '${radioButton}'`);
+		this.framework.logger.info(`Selected radio button option \"${radioButton}\"`);
 	};
 
 	validateRadioButtonResult = async (result: string): Promise<void> => {

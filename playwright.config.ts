@@ -30,8 +30,8 @@ const config: PlaywrightTestConfig = {
 			}
 		}
 		// {
-		//     name: 'Firefox',
-		//     use: { browserName: 'firefox' },
+		// 	name: 'Firefox',
+		// 	use: { browserName: 'firefox' }
 		// },
 		// {
 		// 	name: 'WebKit',

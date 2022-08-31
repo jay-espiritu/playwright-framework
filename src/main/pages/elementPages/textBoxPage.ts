@@ -1,5 +1,6 @@
 import { ElementHelper } from '@main/helpers';
 import { Framework } from '@main/test-setup';
+import { expect } from '@main/pages/basePages';
 
 const fullName = '#userName';
 const email = '#userEmail';
@@ -25,12 +26,12 @@ export class TextBoxPage {
 
 	clickTextButtonSubmit = async (): Promise<void> => {
 		await ElementHelper.click(this.framework, submitButton);
-		this.framework.logger.debug('Clicked submit button');
+		this.framework.logger.info('Clicked submit button');
 	};
 
 	validateTextFormWindowExist = async (): Promise<void> => {
 		const locator = ElementHelper.findLocator(this.framework, textFormResultWindow);
-		await locator.isVisible();
+		expect(await locator.isVisible()).toBeTruthy();
 		this.framework.logger.info('Validated text form window exists');
 	};
 }

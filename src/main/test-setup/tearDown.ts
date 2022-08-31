@@ -6,4 +6,5 @@ export const afterEachDefault = async (framework: Framework, info: TestInfo): Pr
 	await framework.context.close();
 	const videoPath = await framework.page.video()?.path();
 	fs.renameSync(videoPath, `test-results/${info.title}.webm`);
+	framework.logger.info(`Title: ${info.title} | Result: ${info.status}`);
 };
