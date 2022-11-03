@@ -9,32 +9,35 @@ const checkBoxPageHeader = '.playgound-header';
 
 export class CheckBoxPage {
 	readonly framework: Framework;
-
+	readonly elementHelper: ElementHelper;
+	readonly screenshot: Screenshot;
 	constructor(framework: Framework) {
 		this.framework = framework;
+		this.elementHelper = new ElementHelper(framework);
+		this.screenshot = new Screenshot(framework);
 	}
 
 	selectCheckboxOption = async (optionNames: string[]): Promise<void> => {
 		for (let index = 0; index < optionNames.length; index++) {
-			await ElementHelper.click(this.framework, `text=${optionNames[index]}`);
+			await this.elementHelper.click(`text=${optionNames[index]}`);
 		}
 		this.framework.logger.info(`Selected the following checkbox options: ${optionNames}`);
 	};
 
 	expandDropdownList = async (): Promise<void> => {
-		await ElementHelper.click(this.framework, expandButton);
-		await ElementHelper.click(this.framework, checkBoxPageHeader);
+		await this.elementHelper.click(expandButton);
+		await this.elementHelper.click(checkBoxPageHeader);
 		this.framework.logger.info('Expanded dropdown list');
 	};
 
 	collapseDropdownList = async (): Promise<void> => {
-		await ElementHelper.click(this.framework, collapseButton);
-		await ElementHelper.click(this.framework, checkBoxPageHeader);
+		await this.elementHelper.click(collapseButton);
+		await this.elementHelper.click(checkBoxPageHeader);
 		this.framework.logger.info('Collapsed dropdown list');
 	};
 
 	validateCheckboxScreenshot = async (screenshotName: string): Promise<void> => {
-		await Screenshot.validateElementScreenshot(this.framework, dropdownListDiv, screenshotName);
+		await this.screenshot.validateElementScreenshot(dropdownListDiv, screenshotName);
 		this.framework.logger.info('Successfully validated checkbox screenshot');
 	};
 }

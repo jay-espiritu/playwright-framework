@@ -1,20 +1,28 @@
 import { Framework } from '@main/test-setup';
 import { Response } from '@playwright/test';
 
-export const navigateTo = async (framework: Framework, url: string): Promise<null | Response> => {
-	const response = await framework.page.goto(url);
-	framework.logger.debug(`Navigated to \"${url}\"`);
-	return response;
-};
+export class PageHelper {
+	readonly framework: Framework;
 
-export const getCurrentUrl = async (framework: Framework): Promise<string> => {
-	const url = framework.page.url();
-	framework.logger.debug(`Current URL is \"${url}\"`);
-	return url;
-};
+	constructor(framework: Framework) {
+		this.framework = framework;
+	}
 
-export const refreshPage = async (framework: Framework): Promise<null | Response> => {
-	const response = await framework.page.reload();
-	framework.logger.debug(`Refreshed page`);
-	return response;
-};
+	navigateTo = async (url: string): Promise<null | Response> => {
+		const response = await this.framework.page.goto(url);
+		this.framework.logger.debug(`Navigated to \"${url}\"`);
+		return response;
+	};
+
+	getCurrentUrl = async (): Promise<string> => {
+		const url = this.framework.page.url();
+		this.framework.logger.debug(`Current URL is \"${url}\"`);
+		return url;
+	};
+
+	refreshPage = async (): Promise<null | Response> => {
+		const response = await this.framework.page.reload();
+		this.framework.logger.debug(`Refreshed page`);
+		return response;
+	};
+}

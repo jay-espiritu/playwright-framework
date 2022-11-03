@@ -23,7 +23,7 @@
 		"test": "npx playwright test",
 		"pretest": "rimraf test-logs && rimraf test-results",
 		"install:framework": "npm run clean && npm i && npm run build",
-		"ts:watch": "tsc -w"
+		"watch": "tsc -w"
 	},
 	"repository": {
 		"type": "git",
@@ -39,18 +39,17 @@
 	},
 	"homepage": "https://github.com/jay-espiritu/playwright-framework#readme",
 	"devDependencies": {
-		"@faker-js/faker": "^7.4.0",
-		"@playwright/test": "^1.25.1",
-		"@typescript-eslint/eslint-plugin": "^5.35.1",
-		"@typescript-eslint/parser": "^5.35.1",
+		"@faker-js/faker": "^7.6.0",
+		"@playwright/test": "^1.27.1",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
 		"allure-commandline": "^2.18.1",
 		"allure-playwright": "2.0.0-beta.19",
-		"eslint-plugin-playwright": "^0.11.1",
-		"eslint": "^8.22.0",
+		"eslint-plugin-playwright": "^0.11.2",
+		"eslint": "^8.26.0",
 		"husky": "^8.0.1",
-		"log4js": "^6.6.1",
-		"playwright": "^1.25.1",
+		"log4js": "^6.7.0",
 		"prettier": "^2.7.1",
-		"typescript": "^4.8.2"
+		"typescript": "^4.8.4"
 	}
 }

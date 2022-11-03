@@ -1,4 +1,4 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
 	reporter: process.env.CI ? [['allure-playwright'], ['allure-playwright'], ['list'], ['junit', { outputFile: 'test-results/results.xml' }], ['json', { outputFile: 'test-results/results.json' }], ['html', { outputFolder: 'test-results/result', open: false }]] : [['list']],
@@ -12,14 +12,14 @@ const config: PlaywrightTestConfig = {
 		baseURL: 'https://demoqa.com',
 		headless: true,
 		launchOptions: {
-			args: ['--disable-dev-shm-usage']
+			args: ['--disable-dev-shm-usage', '--disable-web-security', '--disable-features=IsolateOrigins, site-per-process']
 		},
 		contextOptions: {
 			acceptDownloads: true
 		},
 		viewport: { width: 1920, height: 1080 },
-		video: 'retain-on-failure',
-		trace: 'retain-on-failure',
+		video: 'on',
+		trace: 'on',
 		screenshot: 'only-on-failure'
 	},
 	projects: [

@@ -3,6 +3,7 @@
 	"configurations": [
 		{
 			"name": "Playwright Current File",
+			"runtimeVersion": "16",
 			"request": "launch",
 			"runtimeArgs": ["run", "test", "--retries=0", "${fileBasename}"],
 			"runtimeExecutable": "npm",

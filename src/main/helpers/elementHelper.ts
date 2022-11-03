@@ -1,57 +1,65 @@
 import { Framework } from '@main/test-setup';
 import { Locator } from '@playwright/test';
 
-export const findLocator = (framework: Framework, locator: string): Locator => {
-	return framework.page.locator(locator);
-};
+export class ElementHelper {
+	readonly framework: Framework;
 
-export const click = async (framework: Framework, locator: string): Promise<void> => {
-	await findLocator(framework, locator).click();
-	framework.logger.trace(`Clicked element | Element: ${locator}`);
-};
+	constructor(framework: Framework) {
+		this.framework = framework;
+	}
 
-export const doubleClick = async (framework: Framework, locator: string): Promise<void> => {
-	await findLocator(framework, locator).dblclick();
-	framework.logger.trace(`Double clicked element | Element: ${locator}`);
-};
+	findLocator = (locator: string): Locator => {
+		return this.framework.page.locator(locator);
+	};
 
-export const enterText = async (framework: Framework, locator: string, text: string): Promise<void> => {
-	await clearText(framework, locator);
-	await findLocator(framework, locator).fill(text);
-	framework.logger.trace(`Filled in text field | Element: ${locator}`);
-};
+	click = async (locator: string): Promise<void> => {
+		await this.findLocator(locator).click();
+		this.framework.logger.trace(`Clicked element | Element: ${locator}`);
+	};
 
-export const clearText = async (framework: Framework, locator: string): Promise<void> => {
-	await framework.page.focus(locator);
-	await framework.page.keyboard.down('Control');
-	await pressKeyboardKey(framework, 'A');
-	await framework.page.keyboard.up('Control');
-	await pressKeyboardKey(framework, 'Backspace');
-	framework.logger.trace(`Cleared text field content | Element: ${locator}`);
-};
+	doubleClick = async (locator: string): Promise<void> => {
+		await this.findLocator(locator).dblclick();
+		this.framework.logger.trace(`Double clicked element | Element: ${locator}`);
+	};
 
-export const check = async (framework: Framework, locator: string): Promise<void> => {
-	await findLocator(framework, locator).check();
-	framework.logger.trace(`Checked element | Element: ${locator}`);
-};
+	enterText = async (locator: string, text: string): Promise<void> => {
+		await this.clearText(locator);
+		await this.findLocator(locator).fill(text);
+		this.framework.logger.trace(`Filled in text field | Element: ${locator}`);
+	};
 
-export const pressKeyboardKey = async (framework: Framework, key: string): Promise<void> => {
-	await framework.page.keyboard.press(key);
-	framework.logger.trace(`Pressed keyboard key | Key: ${key}`);
-};
+	clearText = async (locator: string): Promise<void> => {
+		await this.framework.page.focus(locator);
+		await this.framework.page.keyboard.down('Control');
+		await this.pressKeyboardKey('A');
+		await this.framework.page.keyboard.up('Control');
+		await this.pressKeyboardKey('Backspace');
+		this.framework.logger.trace(`Cleared text field content | Element: ${locator}`);
+	};
 
-export const waitForSelectorToBeVisible = async (framework: Framework, locator: Locator, timeout: number = 30000): Promise<void> => {
-	await locator.waitFor({
-		state: 'visible',
-		timeout: timeout
-	});
-	framework.logger.trace(`Waited for selector to be visible`);
-};
+	check = async (locator: string): Promise<void> => {
+		await this.findLocator(locator).check();
+		this.framework.logger.trace(`Checked element | Element: ${locator}`);
+	};
 
-export const waitForSelectorToBeHidden = async (framework: Framework, locator: Locator, timeout: number = 30000): Promise<void> => {
-	await locator.waitFor({
-		state: 'hidden',
-		timeout: timeout
-	});
-	framework.logger.trace(`Waited for selector to be hidden`);
-};
+	pressKeyboardKey = async (key: string): Promise<void> => {
+		await this.framework.page.keyboard.press(key);
+		this.framework.logger.trace(`Pressed keyboard key | Key: ${key}`);
+	};
+
+	waitForSelectorToBeVisible = async (locator: Locator, timeout: number = 30000): Promise<void> => {
+		await locator.waitFor({
+			state: 'visible',
+			timeout: timeout
+		});
+		this.framework.logger.trace(`Waited for selector to be visible`);
+	};
+
+	waitForSelectorToBeHidden = async (locator: Locator, timeout: number = 30000): Promise<void> => {
+		await locator.waitFor({
+			state: 'hidden',
+			timeout: timeout
+		});
+		this.framework.logger.trace(`Waited for selector to be hidden`);
+	};
+}

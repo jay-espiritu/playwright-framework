@@ -1,9 +1,14 @@
-import { PageHelper } from '@main/helpers';
 import test from '@main/pages/basePages';
+import { TearDown } from '@main/test-setup';
+import { TestInfo } from '@playwright/test';
 
 test.describe('Check Box Test Suite ', () => {
-	test.beforeEach(async ({ checkBoxPage }) => {
-		await PageHelper.navigateTo(checkBoxPage.framework, '/checkbox');
+	test.beforeEach(async ({ pageHelper }) => {
+		await pageHelper.navigateTo('/checkbox');
+	});
+
+	test.afterEach(async ({ tearDown }) => {
+		await tearDown.afterEachDefault();
 	});
 
 	test('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {

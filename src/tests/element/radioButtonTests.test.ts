@@ -1,10 +1,9 @@
 import test from '@main/pages/basePages';
-import { PageHelper } from '@main/helpers';
 import { RadioButton } from '@main/pages';
 
 test.describe('Radio Button Test Suite ', () => {
-	test.beforeEach(async ({ radioButtonPage }) => {
-		await PageHelper.navigateTo(radioButtonPage.framework, '/radio-button');
+	test.beforeEach(async ({ pageHelper }) => {
+		await pageHelper.navigateTo('/radio-button');
 	});
 
 	test('TC_RadioButton_001: Select radio button as yes', async ({ radioButtonPage }) => {
