@@ -7,10 +7,6 @@ test.describe('Check Box Test Suite ', () => {
 		await pageHelper.navigateTo('/checkbox');
 	});
 
-	test.afterEach(async ({ tearDown }) => {
-		await tearDown.afterEachDefault();
-	});
-
 	test('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
 		const options = ['Notes', 'React', 'Private'];
 
