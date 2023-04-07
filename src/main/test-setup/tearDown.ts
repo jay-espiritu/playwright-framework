@@ -1,6 +1,6 @@
 import { TestInfo } from '@playwright/test';
 import { Framework } from '@main/test-setup';
-var fs = require('fs');
+import fs from 'fs';
 
 export class TearDown {
 	readonly framework: Framework;
@@ -13,7 +13,7 @@ export class TearDown {
 	afterEachDefault = async (): Promise<void> => {
 		const info = this.testInfo;
 		await this.framework.context.close();
-		const videoPath = await this.framework.page.video()?.path();
+		const videoPath = (await this.framework.page.video()?.path()) ?? '';
 		fs.renameSync(videoPath, `test-results/${info.title}.webm`);
 		this.framework.logger.info(`Title: ${info.title} | Result: ${info.status}`);
 	};

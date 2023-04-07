@@ -47,7 +47,7 @@ export class ElementHelper {
 		this.framework.logger.trace(`Pressed keyboard key | Key: ${key}`);
 	};
 
-	waitForSelectorToBeVisible = async (locator: Locator, timeout: number = 30000): Promise<void> => {
+	waitForSelectorToBeVisible = async (locator: Locator, timeout = 30000): Promise<void> => {
 		await locator.waitFor({
 			state: 'visible',
 			timeout: timeout
@@ -55,7 +55,7 @@ export class ElementHelper {
 		this.framework.logger.trace(`Waited for selector to be visible`);
 	};
 
-	waitForSelectorToBeHidden = async (locator: Locator, timeout: number = 30000): Promise<void> => {
+	waitForSelectorToBeHidden = async (locator: Locator, timeout = 30000): Promise<void> => {
 		await locator.waitFor({
 			state: 'hidden',
 			timeout: timeout

@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/playwright:v1.27.0-focal-arm64
+FROM mcr.microsoft.com/playwright:v1.32.2-focal-arm64
 
-ENV NODE_VERSION v16
+ENV NODE_VERSION v18
 
 # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user    
 ARG USERNAME=vscode

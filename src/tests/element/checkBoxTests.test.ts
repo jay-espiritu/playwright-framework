@@ -1,6 +1,4 @@
 import test from '@main/pages/basePages';
-import { TearDown } from '@main/test-setup';
-import { TestInfo } from '@playwright/test';
 
 test.describe('Check Box Test Suite ', () => {
 	test.beforeEach(async ({ pageHelper }) => {
