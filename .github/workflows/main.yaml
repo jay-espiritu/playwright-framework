@@ -36,6 +36,7 @@ jobs:
 
       - name: Rename & zipped test results
         shell: bash
+        if: ${{ always() }}
         run : |
           sh src/scripts/renameTestResults.sh
           sh src/scripts/zipTestResults.sh
