@@ -11,7 +11,7 @@ test.describe('Radio Button Test Suite ', () => {
 	});
 
 	test('TC_RadioButton_002: Select radio button as impressive', async ({ radioButtonPage }) => {
-		await radioButtonPage.selectRadioButton('yes');
+		await radioButtonPage.selectRadioButton('impressive');
 		await radioButtonPage.validateRadioButtonResult('Impressive');
 	});
 });
