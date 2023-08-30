@@ -9,7 +9,7 @@ test.describe('Check Box Test Suite ', () => {
 		await tearDown.afterEachDefault();
 	});
 
-	test.only('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
+	test('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
 		const options = ['Notes', 'React', 'Private'];
 
 		await checkBoxPage.expandDropdownList();
