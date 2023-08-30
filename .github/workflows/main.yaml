@@ -35,6 +35,7 @@ jobs:
         run: npm run test
 
       - name: Rename & zipped test results
+        shell: bash
         run : |
           sh src/scripts/renameTestResults.sh
           sh src/scripts/zipTestResults.sh
