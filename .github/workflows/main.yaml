@@ -34,12 +34,24 @@ jobs:
       - name: Run tests
         run: npm run test
 
+      - name: Rename & zipped test results
+        run : |
+          sh src/scripts/renameTestResults.sh
+          sh src/scripts/zipTestResults.sh
+
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
           name: test-artifacts
           path: test-results/*
+
+      - name: Upload zipped test artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: test-artifacts
+          path: test-results-zip/*
 
       - name: Upload test logs
         uses: actions/upload-artifact@v2

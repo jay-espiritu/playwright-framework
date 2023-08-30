@@ -9,6 +9,15 @@
 			"runtimeExecutable": "npm",
 			"skipFiles": ["<node_internals>/**"],
 			"type": "pwa-node"
+		},
+		{
+			"name": "Current TS File",
+			"type": "node",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"runtimeExecutable": "/opt/homebrew/bin/node",
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
 		}
 	]
 }
