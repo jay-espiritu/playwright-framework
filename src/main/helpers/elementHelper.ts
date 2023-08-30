@@ -8,9 +8,7 @@ export class ElementHelper {
 		this.framework = framework;
 	}
 
-	findLocator = (locator: string): Locator => {
-		return this.framework.page.locator(locator);
-	};
+	findLocator = (locator: string): Locator => this.framework.page.locator(locator);
 
 	click = async (locator: string): Promise<void> => {
 		await this.findLocator(locator).click();

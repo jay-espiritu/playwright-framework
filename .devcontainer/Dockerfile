@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.32.2-focal-arm64
+FROM mcr.microsoft.com/playwright:v1.37.1-focal-arm64
 
 ENV NODE_VERSION v18
 

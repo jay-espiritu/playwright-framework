@@ -3,12 +3,21 @@
 	"configurations": [
 		{
 			"name": "Playwright Current File",
-			"runtimeVersion": "16",
+			"runtimeVersion": "18",
 			"request": "launch",
-			"runtimeArgs": ["run", "test", "--retries=0", "${fileBasename}"],
+			"runtimeArgs": ["run-script", "test", "--retries=0", "${fileBasename}"],
 			"runtimeExecutable": "npm",
 			"skipFiles": ["<node_internals>/**"],
 			"type": "pwa-node"
+		},
+		{
+			"name": "Current TS File",
+			"type": "node",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"runtimeExecutable": "/opt/homebrew/bin/node",
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
 		}
 	]
 }

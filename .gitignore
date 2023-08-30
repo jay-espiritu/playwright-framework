@@ -1,6 +1,8 @@
+.DS_Store
 allure-results
 dist
 node_modules
 target
 test-logs
 test-results
+test-results-zip

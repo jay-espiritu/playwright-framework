@@ -1,26 +1,13 @@
-import { ElementHelper } from '@main/helpers';
-import { Framework } from '@main/test-setup';
-import { Screenshot } from '@main/utils';
+import { BaseConfig } from '@main/pages/base/baseConfig';
 
 const expandButton = "[aria-label='Expand all']";
 const collapseButton = "[aria-label='Collapse all']";
 const dropdownListDiv = '.check-box-tree-wrapper';
 const checkBoxPageHeader = '.playgound-header';
 
-export class CheckBoxPage {
-	readonly framework: Framework;
-	readonly elementHelper: ElementHelper;
-	readonly screenshot: Screenshot;
-	constructor(framework: Framework) {
-		this.framework = framework;
-		this.elementHelper = new ElementHelper(framework);
-		this.screenshot = new Screenshot(framework);
-	}
-
+export class CheckBoxPage extends BaseConfig {
 	selectCheckboxOption = async (optionNames: string[]): Promise<void> => {
-		for (let index = 0; index < optionNames.length; index++) {
-			await this.elementHelper.click(`text=${optionNames[index]}`);
-		}
+		for (const name of optionNames) await this.elementHelper.click(`text=${name}`);
 		this.framework.logger.info(`Selected the following checkbox options: ${optionNames}`);
 	};
 

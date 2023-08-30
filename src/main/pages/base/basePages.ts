@@ -4,9 +4,9 @@ import { Framework, Setup } from '@main/test-setup';
 import { CheckBoxPage, RadioButtonPage, TextBoxPage } from '@main/pages/index';
 
 import { logging } from '@utils/loggers';
-import { Format } from '@main/utils';
+import { Format } from '@utils/index';
 import { ElementHelper, PageHelper } from '@main/helpers/index';
-import { TearDown } from '../test-setup/tearDown';
+import { TearDown } from '../../test-setup/tearDown';
 
 let framework: Framework;
 let logger: Logger;
