@@ -10,13 +10,13 @@ export class PageHelper {
 
 	navigateTo = async (url: string): Promise<null | Response> => {
 		const response = await this.framework.page.goto(url);
-		this.framework.logger.debug(`Navigated to \"${url}\"`);
+		this.framework.logger.debug(`Navigated to "${url}"`);
 		return response;
 	};
 
 	getCurrentUrl = async (): Promise<string> => {
 		const url = this.framework.page.url();
-		this.framework.logger.debug(`Current URL is \"${url}\"`);
+		this.framework.logger.debug(`Current URL is "${url}"`);
 		return url;
 	};
 

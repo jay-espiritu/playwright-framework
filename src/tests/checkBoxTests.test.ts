@@ -1,11 +1,15 @@
-import test from '@main/pages/basePages';
+import test from '@main/pages/base/basePages';
 
 test.describe('Check Box Test Suite ', () => {
 	test.beforeEach(async ({ pageHelper }) => {
 		await pageHelper.navigateTo('/checkbox');
 	});
 
-	test('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
+	test.afterEach(async ({ tearDown }) => {
+		await tearDown.afterEachDefault();
+	});
+
+	test.only('TC_Checkbox_001: Select multiple dropdown options', async ({ checkBoxPage }) => {
 		const options = ['Notes', 'React', 'Private'];
 
 		await checkBoxPage.expandDropdownList();

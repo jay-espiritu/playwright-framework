@@ -1,6 +1,5 @@
-import { ElementHelper } from '@main/helpers';
-import { Framework } from '@main/test-setup';
-import { expect } from '@main/pages/basePages';
+import { expect } from '@main/pages/base/basePages';
+import { BaseConfig } from '@main/pages/base/baseConfig';
 
 const fullName = '#userName';
 const email = '#userEmail';
@@ -9,14 +8,7 @@ const permanentAddress = '#permanentAddress';
 const submitButton = 'text=Submit';
 const textFormResultWindow = '.border.col-md-12.col-sm-12';
 
-export class TextBoxPage {
-	readonly framework: Framework;
-	readonly elementHelper: ElementHelper;
-	constructor(framework: Framework) {
-		this.framework = framework;
-		this.elementHelper = new ElementHelper(framework);
-	}
-
+export class TextBoxPage extends BaseConfig {
 	fillTextBoxForm = async (formDetails: TextBoxForm): Promise<void> => {
 		await this.elementHelper.enterText(fullName, formDetails.fullName);
 		await this.elementHelper.enterText(email, formDetails.email);
@@ -32,7 +24,7 @@ export class TextBoxPage {
 
 	validateTextFormWindowExist = async (): Promise<void> => {
 		const locator = this.elementHelper.findLocator(textFormResultWindow);
-		expect(await locator.isVisible()).toBeTruthy();
+		await expect(locator).toBeVisible();
 		this.framework.logger.info('Validated text form window exists');
 	};
 }

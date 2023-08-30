@@ -1,5 +1,5 @@
-import { expect } from '@main/pages/basePages';
 import { ElementHelper } from '@main/helpers';
+import { expect } from '@main/pages/base/basePages';
 import { Framework } from '@main/test-setup';
 
 export class Screenshot {
@@ -10,9 +10,7 @@ export class Screenshot {
 		this.elementHelper = new ElementHelper(framework);
 	}
 
-	validateComparison = async (actualImage: Buffer, name: string): Promise<void> => {
-		expect.soft(actualImage).toMatchSnapshot([`${name}.png`]);
-	};
+	validateComparison = async (actualImage: Buffer, name: string): Promise<void> => expect.soft(actualImage).toMatchSnapshot([`${name}.png`]);
 
 	validateElementScreenshot = async (locator: string, name: string): Promise<void> => {
 		const image = await this.captureElement(locator);
@@ -26,12 +24,7 @@ export class Screenshot {
 		this.framework.logger.info(`Successful page screenshot validation | Name: ${name}`);
 	};
 
-	private capturePage = async (): Promise<Buffer> => {
-		return await this.framework.page.screenshot();
-	};
+	private capturePage = async (): Promise<Buffer> => await this.framework.page.screenshot();
 
-	private captureElement = async (locator: string): Promise<Buffer> => {
-		const element = this.elementHelper.findLocator(locator);
-		return await element?.screenshot();
-	};
+	private captureElement = async (locator: string): Promise<Buffer> => await this.elementHelper.findLocator(locator).screenshot();
 }

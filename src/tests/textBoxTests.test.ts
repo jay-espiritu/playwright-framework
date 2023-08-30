@@ -1,4 +1,4 @@
-import test from '@main/pages/basePages';
+import test from '@main/pages/base/basePages';
 import { TextBoxForm } from '@main/pages';
 import { faker } from '@faker-js/faker';
 

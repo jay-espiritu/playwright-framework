@@ -14,6 +14,4 @@ export class Framework {
 	}
 }
 
-export const beforeEachDefault = async (browser: Browser, context: BrowserContext, page: Page, logger: Logger): Promise<Framework> => {
-	return new Framework(browser, context, page, logger);
-};
+export const beforeEachDefault = async (browser: Browser, context: BrowserContext, page: Page, logger: Logger): Promise<Framework> => new Framework(browser, context, page, logger);
